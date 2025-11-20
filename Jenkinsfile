@@ -49,7 +49,7 @@ pipeline {
         stage('Docker Tag the Image') {
             steps {
                 echo "Tagging the Docker image..."
-                sh 'sudo docker tag snapchat-sak-cicd-docker LavanyaND/snapchat-sak-cicd-docker:latest'
+                sh 'sudo docker tag snapchat-sak-cicd-docker lavanyand/snapchat-sak-cicd-docker:latest'
             }
             post {
                 success {
@@ -63,7 +63,7 @@ pipeline {
         stage('Docker Push the Image') {
             steps {
                 echo "Pushing the Docker image to DockerHub..."
-                sh 'sudo docker push LavanyaND/snapchat-sak-cicd-docker:latest'
+                sh 'sudo docker push lavanyand/snapchat-sak-cicd-docker:latest'
             }
             post {
                 success {
@@ -78,7 +78,7 @@ pipeline {
             steps {
                 echo "Cleaning up local Docker images..."
                 sh '''
-                    sudo docker rmi LavanyaND/snapchat-sak-cicd-docker:latest
+                    sudo docker rmi lavanyand/snapchat-sak-cicd-docker:latest
                     sudo docker rmi snapchat-sak-cicd-docker
                 '''
             }
